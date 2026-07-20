@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI & Automation Consulting | The AI CFO</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S57N55X8PK"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S57N55X8PK');
+</script>
 <style>
   :root {
     --navy: #0b1f3a;
@@ -225,6 +233,9 @@
       headers: { 'Accept': 'application/json' }
     }).then(function (response) {
       if (response.ok) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'generate_lead', { event_category: 'form_submission', event_label: 'automation' });
+        }
         document.getElementById('formInner').style.display = 'none';
         document.getElementById('formThanks').style.display = 'block';
       } else {
